@@ -21,7 +21,7 @@
   $order_for_takeout->to = $receiving_email_address;
   $order_for_takeout->from_name = $_POST['name'];
   $order_for_takeout->from_email = $_POST['email'];
-  $order_for_takeout->subject = "New takeout order from the website";
+  $order_for_takeout->subject = "New table booking request from the website";
 
   // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
   /*
@@ -37,9 +37,9 @@
   $order_for_takeout->add_message( $_POST['email'], 'Email');
   $order_for_takeout->add_message( $_POST['phone'], 'Phone', 4);
   $order_for_takeout->add_message( $_POST['date'], 'Date', 4);
-  $order_for_takeout->add_message( $_POST['time'], 'Delivery time', 4);
-  $order_for_takeout->add_message( $_POST['Address'], 'Address', 1);
-  $order_for_takeout->add_message( $_POST['special'], 'Special requests');
+  $order_for_takeout->add_message( $_POST['time'], 'Time', 4);
+  $order_for_takeout->add_message( $_POST['people'], '# of people', 1);
+  $order_for_takeout->add_message( $_POST['message'], 'Message');
 
   echo $order_for_takeout->send();
 ?>
